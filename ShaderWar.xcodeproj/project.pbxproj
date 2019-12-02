@@ -15,6 +15,7 @@
 		D7DF8E562394F7EB00D4EA45 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D7DF8E542394F7EB00D4EA45 /* LaunchScreen.storyboard */; };
 		D7DF8E5E2395078900D4EA45 /* Background.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7DF8E5D2395078900D4EA45 /* Background.swift */; };
 		D7DF8E6023950FCF00D4EA45 /* Island.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7DF8E5F23950FCF00D4EA45 /* Island.swift */; };
+		D7DF8E6223954CC900D4EA45 /* Cloud.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7DF8E6123954CC900D4EA45 /* Cloud.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		D7DF8E572394F7EB00D4EA45 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D7DF8E5D2395078900D4EA45 /* Background.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Background.swift; sourceTree = "<group>"; };
 		D7DF8E5F23950FCF00D4EA45 /* Island.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Island.swift; sourceTree = "<group>"; };
+		D7DF8E6123954CC900D4EA45 /* Cloud.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cloud.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +66,7 @@
 				D7DF8E4B2394F7EB00D4EA45 /* GameScene.swift */,
 				D7DF8E5D2395078900D4EA45 /* Background.swift */,
 				D7DF8E5F23950FCF00D4EA45 /* Island.swift */,
+				D7DF8E6123954CC900D4EA45 /* Cloud.swift */,
 				D7DF8E4D2394F7EB00D4EA45 /* GameViewController.swift */,
 				D7DF8E4F2394F7EB00D4EA45 /* Main.storyboard */,
 				D7DF8E522394F7EB00D4EA45 /* Assets.xcassets */,
@@ -145,6 +148,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D7DF8E4C2394F7EB00D4EA45 /* GameScene.swift in Sources */,
+				D7DF8E6223954CC900D4EA45 /* Cloud.swift in Sources */,
 				D7DF8E4E2394F7EB00D4EA45 /* GameViewController.swift in Sources */,
 				D7DF8E462394F7EB00D4EA45 /* AppDelegate.swift in Sources */,
 				D7DF8E6023950FCF00D4EA45 /* Island.swift in Sources */,
