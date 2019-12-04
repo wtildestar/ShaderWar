@@ -10,14 +10,14 @@ import SpriteKit
 import GameplayKit
 
 protocol GameBackgroundSpriteable {
-    static func populate() -> Self // Self это тип протокола GameBackgroundSpriteable / тип класса Cloud
+    static func populate(at point: CGPoint?) -> Self // Self это тип протокола GameBackgroundSpriteable / тип класса Cloud
     static func randomPoint() -> CGPoint
 }
 
 extension GameBackgroundSpriteable {
     static func randomPoint() -> CGPoint {
         let screen = UIScreen.main.bounds
-        let distribution = GKRandomDistribution(lowestValue: Int(screen.size.height + 100), highestValue: Int(screen.size.height + 200))
+        let distribution = GKRandomDistribution(lowestValue: Int(screen.size.height + 400), highestValue: Int(screen.size.height + 500))
         let y = CGFloat(distribution.nextInt()) // nextInt генерируем какое-нибудь значение
         let x = CGFloat(GKRandomSource.sharedRandom().nextInt(upperBound: Int(screen.size.width))) // здесь счет от 0 до upperBound - верхней границы
         return CGPoint(x: x, y: y)

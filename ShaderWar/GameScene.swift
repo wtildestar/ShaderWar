@@ -27,7 +27,7 @@ class GameScene: SKScene {
         let spawnCloudWait = SKAction.wait(forDuration: 1)
         let spawnCloudAction = SKAction.run {
             // создаем облако с рандомной точкой за пределами экрана наверху
-            let cloud = Cloud.populate()
+            let cloud = Cloud.populate(at: nil)
             self.addChild(cloud)
         }
         
@@ -41,7 +41,7 @@ class GameScene: SKScene {
         let spawnIslandWait = SKAction.wait(forDuration: 2)
         let spawnIslandAction = SKAction.run {
             // создаем облако с рандомной точкой за пределами экрана наверху
-            let island = Island.populate()
+            let island = Island.populate(at: nil)
             self.addChild(island)
         }
         
@@ -87,7 +87,14 @@ class GameScene: SKScene {
         } else if player.position.x > self.size.width + 70 {
             player.position.x = -70
         }
+        
+        enumerateChildNodes(withName: "backgroundSprite") { (node, stop) in
+            if node.position.y < -199 {
+                node.removeFromParent()
+            }
+        }
     }
+    
 }
 
 
