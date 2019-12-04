@@ -68,11 +68,11 @@
 			children = (
 				D7DF8E452394F7EB00D4EA45 /* AppDelegate.swift */,
 				D7DF8E4B2394F7EB00D4EA45 /* GameScene.swift */,
+				D7DF8E632395E8D100D4EA45 /* PlayerPlane.swift */,
 				D7DF8E5D2395078900D4EA45 /* Background.swift */,
 				D7DF8E5F23950FCF00D4EA45 /* Island.swift */,
 				D7DF8E6123954CC900D4EA45 /* Cloud.swift */,
 				D7DF8E652397C01C00D4EA45 /* protocol GameBackgroundSpriteable + Extension.swift */,
-				D7DF8E632395E8D100D4EA45 /* PlayerPlane.swift */,
 				D7DF8E4D2394F7EB00D4EA45 /* GameViewController.swift */,
 				D7DF8E4F2394F7EB00D4EA45 /* Main.storyboard */,
 				D7DF8E522394F7EB00D4EA45 /* Assets.xcassets */,
