@@ -69,7 +69,7 @@ class PlayerPlane: SKSpriteNode {
                     let texture = SKTexture(imageNamed: "plane_\(number)")
                     array.append(texture)
                 }
-                
+                // return array нельзя выполнить в .preload тк completionHandler исполняется не в основном потоке
                 SKTexture.preload(array) {
                     print("Preload is done")
                 }
