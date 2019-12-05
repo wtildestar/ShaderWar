@@ -18,6 +18,7 @@
 		D7DF8E6223954CC900D4EA45 /* Cloud.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7DF8E6123954CC900D4EA45 /* Cloud.swift */; };
 		D7DF8E642395E8D100D4EA45 /* PlayerPlane.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7DF8E632395E8D100D4EA45 /* PlayerPlane.swift */; };
 		D7DF8E662397C01C00D4EA45 /* protocol GameBackgroundSpriteable + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7DF8E652397C01C00D4EA45 /* protocol GameBackgroundSpriteable + Extension.swift */; };
+		D7DF8E682398778700D4EA45 /* PlayerPlane.atlas in Resources */ = {isa = PBXBuildFile; fileRef = D7DF8E672398778600D4EA45 /* PlayerPlane.atlas */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 		D7DF8E6123954CC900D4EA45 /* Cloud.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cloud.swift; sourceTree = "<group>"; };
 		D7DF8E632395E8D100D4EA45 /* PlayerPlane.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerPlane.swift; sourceTree = "<group>"; };
 		D7DF8E652397C01C00D4EA45 /* protocol GameBackgroundSpriteable + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "protocol GameBackgroundSpriteable + Extension.swift"; sourceTree = "<group>"; };
+		D7DF8E672398778600D4EA45 /* PlayerPlane.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = PlayerPlane.atlas; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,6 +78,7 @@
 				D7DF8E4D2394F7EB00D4EA45 /* GameViewController.swift */,
 				D7DF8E4F2394F7EB00D4EA45 /* Main.storyboard */,
 				D7DF8E522394F7EB00D4EA45 /* Assets.xcassets */,
+				D7DF8E672398778600D4EA45 /* PlayerPlane.atlas */,
 				D7DF8E542394F7EB00D4EA45 /* LaunchScreen.storyboard */,
 				D7DF8E572394F7EB00D4EA45 /* Info.plist */,
 			);
@@ -141,6 +144,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D7DF8E512394F7EB00D4EA45 /* Main.storyboard in Resources */,
+				D7DF8E682398778700D4EA45 /* PlayerPlane.atlas in Resources */,
 				D7DF8E532394F7EB00D4EA45 /* Assets.xcassets in Resources */,
 				D7DF8E562394F7EB00D4EA45 /* LaunchScreen.storyboard in Resources */,
 			);
