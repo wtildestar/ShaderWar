@@ -17,6 +17,8 @@ class PlayerPlane: SKSpriteNode {
     var leftTextureArrayAnimation = [SKTexture]()
     var rightTextureArrayAnimation = [SKTexture]()
     var forwardTextureArrayAnimation = [SKTexture]()
+    var moveDirection: TurnDirection = .none
+    var stillTurning = false
     
     static func popupate(at point: CGPoint) -> PlayerPlane {
         let playerPlaneTexture = SKTexture(imageNamed: "airplane")
@@ -40,13 +42,22 @@ class PlayerPlane: SKSpriteNode {
     func performFly() {
         planeAnimationFillArray()
         motionManager.accelerometerUpdateInterval = 0.2
-        motionManager.startAccelerometerUpdates(to: OperationQueue.current!) { (data, error) in
+        motionManager.startAccelerometerUpdates(to: OperationQueue.current!) { [unowned self] (data, error) in
             if let data = data {
                 let acceleration = data.acceleration
                 self.xAcceleration = CGFloat(acceleration.x) * 0.7 + self.xAcceleration * 0.3
                 
             }
         }
+        let planeWaitAction = SKAction.wait(forDuration: 1.0)
+        let planeDirectionCheckAction = SKAction.run { [unowned self] in
+            self.movementDirectionCheck()
+        }
+        
+        let planeSequence = SKAction.sequence([planeWaitAction, planeDirectionCheckAction])
+        let planceSequenceForever = SKAction.repeatForever(planeSequence)
+        self.run(planceSequenceForever)
+        
     }
     
     fileprivate func planeAnimationFillArray() {
@@ -90,4 +101,44 @@ class PlayerPlane: SKSpriteNode {
             }()
         }
     }
+    
+    fileprivate func movementDirectionCheck() {
+        if xAcceleration > 0.02, moveDirection != .right, stillTurning == false {
+            stillTurning = true
+            moveDirection = .right
+            turnPlane(direction: .right)
+        } else if xAcceleration < -0.02, moveDirection != .left, stillTurning == false {
+            stillTurning = true
+            moveDirection = .left
+            turnPlane(direction: .left)
+        } else if stillTurning == false {
+            
+        }
+    }
+    
+    fileprivate func turnPlane(direction: TurnDirection) {
+        var array = [SKTexture]()
+        
+        if direction == .right {
+            array = rightTextureArrayAnimation
+        } else if direction == .left {
+            array = leftTextureArrayAnimation
+        } else {
+            array = forwardTextureArrayAnimation
+        }
+        
+        let forwardAction = SKAction.animate(with: array, timePerFrame: 0.05, resize: true, restore: false)
+        let backwardAction = SKAction.animate(with: array.reversed(), timePerFrame: 0.05, resize: true, restore: false)
+        
+        let sequenceAction = SKAction.sequence([forwardAction, backwardAction])
+        self.run(sequenceAction) { [unowned self] in
+            self.stillTurning = false
+        }
+    }
+}
+
+enum TurnDirection {
+    case left
+    case right
+    case none
 }
