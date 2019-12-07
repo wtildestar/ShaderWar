@@ -19,6 +19,7 @@ class PlayerPlane: SKSpriteNode {
     var forwardTextureArrayAnimation = [SKTexture]()
     var moveDirection: TurnDirection = .none
     var stillTurning = false
+    let animationSpriteStrides = [(1, 2, -1), (2, 3, 1), (1, 1, 1)]
     
     static func popupate(at point: CGPoint) -> PlayerPlane {
         let playerPlaneTexture = SKTexture(imageNamed: "airplane")
@@ -40,7 +41,8 @@ class PlayerPlane: SKSpriteNode {
     }
     
     func performFly() {
-        planeAnimationFillArray()
+//        planeAnimationFillArray()
+        preloadTextureArrays()
         motionManager.accelerometerUpdateInterval = 0.2
         motionManager.startAccelerometerUpdates(to: OperationQueue.current!) { [unowned self] (data, error) in
             if let data = data {
@@ -60,45 +62,33 @@ class PlayerPlane: SKSpriteNode {
         
     }
     
-    fileprivate func planeAnimationFillArray() {
-        SKTextureAtlas.preloadTextureAtlases([SKTextureAtlas(named: "PlayerPlane")]) {
-            self.leftTextureArrayAnimation = {
-                var array = [SKTexture]()
-                for i in stride(from: 1, through: 2, by: -1) {
-                    let number = String(format: "%02d", i)
-                    let texture = SKTexture(imageNamed: "plane_\(number)")
-                    array.append(texture)
+    
+    fileprivate func preloadArray(_stride: (Int, Int, Int), callback: @escaping (_ array: [SKTexture]) -> ()) {
+        var array = [SKTexture]()
+        for i in stride(from: _stride.0, through: _stride.1, by: _stride.2) {
+            let number = String(format: "%02d", i)
+            let texture = SKTexture(imageNamed: "plane_\(number)")
+            array.append(texture)
+        }
+        SKTexture.preload(array) {
+            callback(array)
+        }
+    }
+    
+    fileprivate func preloadTextureArrays() {
+        for i in 0...2 {
+            self.preloadArray(_stride: animationSpriteStrides[i]) { [unowned self] array in
+                switch i {
+                case 0:
+                    self.leftTextureArrayAnimation = array
+                case 1:
+                    self.rightTextureArrayAnimation = array
+                case 2:
+                    self.forwardTextureArrayAnimation = array
+                default:
+                    break
                 }
-                // return array нельзя выполнить в .preload тк completionHandler исполняется не в основном потоке
-                SKTexture.preload(array) {
-                    print("Preload is done")
-                }
-                return array
-            }()
-            
-            self.rightTextureArrayAnimation = {
-                var array = [SKTexture]()
-                for i in stride(from: 2, through: 3, by: 1) {
-                    let number = String(format: "%02d", i)
-                    let texture = SKTexture(imageNamed: "plane_\(number)")
-                    array.append(texture)
-                }
-                
-                SKTexture.preload(array) {
-                    print("Preload is done")
-                }
-                return array
-            }()
-            self.forwardTextureArrayAnimation = {
-                var array = [SKTexture]()
-                    let texture = SKTexture(imageNamed: "plane_01")
-                    array.append(texture)
-                
-                SKTexture.preload(array) {
-                    print("Preload is done")
-                }
-                return array
-            }()
+            }
         }
     }
     
