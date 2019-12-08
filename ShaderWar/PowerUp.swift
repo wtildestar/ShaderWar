@@ -18,6 +18,7 @@ class PowerUp: SKSpriteNode {
         let greenTexture = textureAtlas.textureNamed("Bomb_1_Idle_00")
         super.init(texture: greenTexture, color: .clear, size: initialSize)
         self.name = "powerUp"
+        self.setScale(-0.36)
         self.zPosition = 20
     }
     
