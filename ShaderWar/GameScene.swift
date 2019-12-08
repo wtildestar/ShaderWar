@@ -19,23 +19,42 @@ class GameScene: SKScene {
     override func didMove(to view: SKView) {
         configureStartScene()
         spawnClouds()
+        spawnIslands()
         let deadline = DispatchTime.now() + .nanoseconds(1)
         DispatchQueue.main.asyncAfter(deadline: deadline) { [unowned self] in
             self.player.performFly()
         }
-        spawnIslands()
         
+        spawnPowerUp()
+        // делаем спаун врагов с задержкой 1сек и кол-вом
+        spawnEnemy(count: 5)
+    }
+    
+    fileprivate func spawnPowerUp() {
         let powerUp = PowerUp()
         powerUp.performRotation()
         powerUp.position = CGPoint(x: self.size.width / 2, y: self.size.height / 2)
         self.addChild(powerUp)
         
+    }
+    
+    fileprivate func spawnEnemy(count: Int) {
         let enemyTextureAtlas = SKTextureAtlas(named: "Bomb_3")
         SKTextureAtlas.preloadTextureAtlases([enemyTextureAtlas]) {
             Enemy.textureAtlas = enemyTextureAtlas
-            let enemy = Enemy()
-            enemy.position = CGPoint(x: self.size.width / 2, y: self.size.height * 2 / 3)
-            self.addChild(enemy)
+            // задаю задержку для отрисовки
+            let waitAction = SKAction.wait(forDuration: 1.0)
+            // запускаю textureAtlas Enemy
+            let spawnEnemy = SKAction.run {
+                let enemy = Enemy()
+                enemy.position = CGPoint(x: self.size.width / 2, y: self.size.height + 100)
+                self.addChild(enemy)
+                enemy.flySpiral()
+            }
+            // задаю последовательность действий
+            let spawnAction = SKAction.sequence([waitAction, spawnEnemy])
+            let repeatAction = SKAction.repeat(spawnAction, count: count)
+            self.run(repeatAction)
         }
         
     }
@@ -91,8 +110,8 @@ class GameScene: SKScene {
         
         player.checkPosition()
         
-        enumerateChildNodes(withName: "backgroundSprite") { (node, stop) in
-            if node.position.y < -199 {
+        enumerateChildNodes(withName: "sprite") { (node, stop) in
+            if node.position.y < -100 {
                 node.removeFromParent()
             }
         }
