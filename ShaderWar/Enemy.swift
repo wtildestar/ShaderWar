@@ -10,9 +10,10 @@ import SpriteKit
 
 class Enemy: SKSpriteNode {
     static var textureAtlas: SKTextureAtlas?
+    var enemyTexture: SKTexture!
     
-    init() {
-        let texture = Enemy.textureAtlas?.textureNamed("Bomb_3_Idle_000")
+    init(enemyTexture: SKTexture) {
+        let texture = enemyTexture
         super.init(texture: texture, color: .clear, size: CGSize(width: 450, height: 300))
         self.xScale = -0.2
         self.yScale = -0.2
@@ -22,13 +23,16 @@ class Enemy: SKSpriteNode {
     
     func flySpiral() {
         let screenSize = UIScreen.main.bounds
-        let timeHorizontal: Double = 1
-        let timeVertical: Double = 15
+        let timeHorizontal: Double = 3
+        let timeVertical: Double = 5
         let moveLeft = SKAction.moveTo(x: 60, duration: timeHorizontal) // граница допустимая до края экрана тк 450 ширина texture / 2 / 2 ~ 110
         moveLeft.timingMode = .easeInEaseOut
         let moveRight = SKAction.moveTo(x: screenSize.width - 45, duration: timeHorizontal)
         moveRight.timingMode = .easeInEaseOut
-        let asideMovementSequence = SKAction.sequence([moveLeft, moveRight])
+        
+        let randomNumber = Int(arc4random_uniform(2)) // 0 и 1 возможные варианты
+        let asideMovementSequence = randomNumber == EnemyDirection.left.rawValue ? SKAction.sequence([moveLeft, moveRight]) : SKAction.sequence([moveRight, moveLeft])
+        
         let foreverAsideMovement = SKAction.repeatForever(asideMovementSequence)
         let forwardMovement = SKAction.moveTo(y: -150, duration: timeVertical)
         let groupMovement = SKAction.group([foreverAsideMovement, forwardMovement])
@@ -38,4 +42,9 @@ class Enemy: SKSpriteNode {
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+}
+
+enum EnemyDirection: Int {
+    case left = 0
+    case right
 }

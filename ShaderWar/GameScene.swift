@@ -27,7 +27,8 @@ class GameScene: SKScene {
         
         spawnPowerUp()
         // делаем спаун врагов с задержкой 1сек и кол-вом
-        spawnEnemy(count: 5)
+//        spawnEnemy(count: 5)
+        spawnEnemies()
     }
     
     fileprivate func spawnPowerUp() {
@@ -38,22 +39,38 @@ class GameScene: SKScene {
         
     }
     
-    fileprivate func spawnEnemy(count: Int) {
-        let enemyTextureAtlas = SKTextureAtlas(named: "Bomb_3")
-        SKTextureAtlas.preloadTextureAtlases([enemyTextureAtlas]) {
-            Enemy.textureAtlas = enemyTextureAtlas
+    fileprivate func spawnEnemies() {
+        let waitAction = SKAction.wait(forDuration: 3.0)
+        let spawnSpiralAction = SKAction.run { [unowned self] in
+            self.spawnSpiralOfEnemies()
+        }
+        // запускаем сам SKAction передав в нем еще один SKAction с двуми секвенциями
+        self.run(SKAction.repeatForever(SKAction.sequence([waitAction, spawnSpiralAction])))
+    }
+    
+    fileprivate func spawnSpiralOfEnemies() {
+        let enemyTextureAtlas1 = SKTextureAtlas(named: "Bomb_2")
+        let enemyTextureAtlas2 = SKTextureAtlas(named: "Bomb_3")
+        SKTextureAtlas.preloadTextureAtlases([enemyTextureAtlas1, enemyTextureAtlas2]) { [unowned self] in
+            
+            let randomNumber = Int(arc4random_uniform(2))
+            let arrayOfAtlasses = [enemyTextureAtlas1, enemyTextureAtlas2]
+            let textureAtlas = arrayOfAtlasses[randomNumber]
+            
             // задаю задержку для отрисовки
             let waitAction = SKAction.wait(forDuration: 1.0)
             // запускаю textureAtlas Enemy
-            let spawnEnemy = SKAction.run {
-                let enemy = Enemy()
+            let spawnEnemy = SKAction.run { [unowned self] in
+                let textureNames = textureAtlas.textureNames.sorted()
+                let texture = textureAtlas.textureNamed(textureNames[1]) // использую первый элемент массива (первое изобажение) .atlas из своих кадров
+                let enemy = Enemy(enemyTexture: texture)
                 enemy.position = CGPoint(x: self.size.width / 2, y: self.size.height + 100)
                 self.addChild(enemy)
                 enemy.flySpiral()
             }
             // задаю последовательность действий
             let spawnAction = SKAction.sequence([waitAction, spawnEnemy])
-            let repeatAction = SKAction.repeat(spawnAction, count: count)
+            let repeatAction = SKAction.repeat(spawnAction, count: 3)
             self.run(repeatAction)
         }
         
