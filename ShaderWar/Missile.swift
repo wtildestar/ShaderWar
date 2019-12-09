@@ -21,12 +21,20 @@ class Missile: SKSpriteNode {
         let texture = textureAtlas.textureNamed(textureName)
         textureNameBeginsWith = String(textureName.dropLast(6)) // откидываем последние 6 символов наименования текстуры
         super.init(texture: texture, color: .clear, size: initialSize)
-        self.name = "missile"
+        self.name = "sprite"
         self.setScale(-0.36)
         self.zPosition = 20
     }
     
-    func performRotation() {
+    func startMovement() {
+        performRotation()
+        // задаем напавление
+        let moveForward = SKAction.moveTo(y: -100, duration: 5)
+        // запускаем SKAction
+        self.run(moveForward)
+    }
+    
+    fileprivate func performRotation() {
         for i in 1...9 {
             let number = String(format: "%02d", i)
             animationSpriteArray.append(SKTexture(imageNamed: textureNameBeginsWith + number.description))
