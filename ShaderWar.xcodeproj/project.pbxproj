@@ -14,6 +14,9 @@
 		D7AF8275239EA2F200555155 /* MissileGreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7AF8274239EA2F200555155 /* MissileGreen.swift */; };
 		D7AF8277239EA84700555155 /* MissileGreen.atlas in Resources */ = {isa = PBXBuildFile; fileRef = D7AF8276239EA84700555155 /* MissileGreen.atlas */; };
 		D7AF8279239EA89400555155 /* MissileRed.atlas in Resources */ = {isa = PBXBuildFile; fileRef = D7AF8278239EA89400555155 /* MissileRed.atlas */; };
+		D7AF827B239EE9B800555155 /* Flame.atlas in Resources */ = {isa = PBXBuildFile; fileRef = D7AF827A239EE9B800555155 /* Flame.atlas */; };
+		D7AF827E239EEA3900555155 /* Flame.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7AF827D239EEA3900555155 /* Flame.swift */; };
+		D7B195C3239F09B300894AC1 /* FireFlame.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7B195C2239F09B300894AC1 /* FireFlame.swift */; };
 		D7DF8E462394F7EB00D4EA45 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7DF8E452394F7EB00D4EA45 /* AppDelegate.swift */; };
 		D7DF8E4C2394F7EB00D4EA45 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7DF8E4B2394F7EB00D4EA45 /* GameScene.swift */; };
 		D7DF8E4E2394F7EB00D4EA45 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7DF8E4D2394F7EB00D4EA45 /* GameViewController.swift */; };
@@ -38,6 +41,9 @@
 		D7AF8274239EA2F200555155 /* MissileGreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MissileGreen.swift; sourceTree = "<group>"; };
 		D7AF8276239EA84700555155 /* MissileGreen.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = MissileGreen.atlas; sourceTree = "<group>"; };
 		D7AF8278239EA89400555155 /* MissileRed.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = MissileRed.atlas; sourceTree = "<group>"; };
+		D7AF827A239EE9B800555155 /* Flame.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = Flame.atlas; sourceTree = "<group>"; };
+		D7AF827D239EEA3900555155 /* Flame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Flame.swift; sourceTree = "<group>"; };
+		D7B195C2239F09B300894AC1 /* FireFlame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FireFlame.swift; sourceTree = "<group>"; };
 		D7DF8E422394F7EB00D4EA45 /* ShaderWar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ShaderWar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D7DF8E452394F7EB00D4EA45 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D7DF8E4B2394F7EB00D4EA45 /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
@@ -67,6 +73,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D7AF827C239EEA0C00555155 /* atlases */ = {
+			isa = PBXGroup;
+			children = (
+				D7AF827A239EE9B800555155 /* Flame.atlas */,
+				D7AF8278239EA89400555155 /* MissileRed.atlas */,
+				D7AF8276239EA84700555155 /* MissileGreen.atlas */,
+				D7527797239D531200EDB5E1 /* Bomb_2.atlas */,
+				D7527795239CDFDD00EDB5E1 /* Bomb_3.atlas */,
+				D7DF8E6B23991A0A00D4EA45 /* PowerUp.atlas */,
+				D7DF8E672398778600D4EA45 /* PlayerPlane.atlas */,
+			);
+			path = atlases;
+			sourceTree = "<group>";
+		};
 		D7DF8E392394F7EB00D4EA45 = {
 			isa = PBXGroup;
 			children = (
@@ -93,21 +113,18 @@
 				D7DF8E5D2395078900D4EA45 /* Background.swift */,
 				D7DF8E5F23950FCF00D4EA45 /* Island.swift */,
 				D7DF8E6123954CC900D4EA45 /* Cloud.swift */,
+				D7AF827D239EEA3900555155 /* Flame.swift */,
+				D7B195C2239F09B300894AC1 /* FireFlame.swift */,
 				D7DF8E69239913DA00D4EA45 /* Missile.swift */,
 				D7AF8274239EA2F200555155 /* MissileGreen.swift */,
 				D7AF8272239EA2DD00555155 /* MissileRed.swift */,
 				D7DF8E652397C01C00D4EA45 /* protocol GameBackgroundSpriteable + Extension.swift */,
 				D7DF8E4D2394F7EB00D4EA45 /* GameViewController.swift */,
 				D7DF8E4F2394F7EB00D4EA45 /* Main.storyboard */,
-				D7AF8278239EA89400555155 /* MissileRed.atlas */,
-				D7AF8276239EA84700555155 /* MissileGreen.atlas */,
 				D7DF8E522394F7EB00D4EA45 /* Assets.xcassets */,
-				D7527797239D531200EDB5E1 /* Bomb_2.atlas */,
-				D7527795239CDFDD00EDB5E1 /* Bomb_3.atlas */,
-				D7DF8E6B23991A0A00D4EA45 /* PowerUp.atlas */,
-				D7DF8E672398778600D4EA45 /* PlayerPlane.atlas */,
 				D7DF8E542394F7EB00D4EA45 /* LaunchScreen.storyboard */,
 				D7DF8E572394F7EB00D4EA45 /* Info.plist */,
+				D7AF827C239EEA0C00555155 /* atlases */,
 			);
 			path = ShaderWar;
 			sourceTree = "<group>";
@@ -179,6 +196,7 @@
 				D7DF8E532394F7EB00D4EA45 /* Assets.xcassets in Resources */,
 				D7DF8E562394F7EB00D4EA45 /* LaunchScreen.storyboard in Resources */,
 				D7527796239CDFDD00EDB5E1 /* Bomb_3.atlas in Resources */,
+				D7AF827B239EE9B800555155 /* Flame.atlas in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -190,6 +208,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D7AF8275239EA2F200555155 /* MissileGreen.swift in Sources */,
+				D7B195C3239F09B300894AC1 /* FireFlame.swift in Sources */,
 				D7DF8E4C2394F7EB00D4EA45 /* GameScene.swift in Sources */,
 				D7DF8E642395E8D100D4EA45 /* PlayerPlane.swift in Sources */,
 				D7DF8E6223954CC900D4EA45 /* Cloud.swift in Sources */,
@@ -200,6 +219,7 @@
 				D7DF8E6023950FCF00D4EA45 /* Island.swift in Sources */,
 				D7DF8E6A239913DA00D4EA45 /* Missile.swift in Sources */,
 				D7AF8273239EA2DD00555155 /* MissileRed.swift in Sources */,
+				D7AF827E239EEA3900555155 /* Flame.swift in Sources */,
 				D7DF8E5E2395078900D4EA45 /* Background.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

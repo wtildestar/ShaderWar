@@ -142,13 +142,26 @@ class GameScene: SKScene {
         enumerateChildNodes(withName: "sprite") { (node, stop) in
             if node.position.y <= -100 {
                 node.removeFromParent()
-                if node.isKind(of: Missile.self) {
-                    print("Missile is removed from scene")
-                }
+            }
+        }
+        
+        enumerateChildNodes(withName: "flameSprite") { (node, stop) in
+            if node.position.y >= self.size.height + 100 {
+                node.removeFromParent()
             }
         }
     }
     
+    fileprivate func playerFire() {
+        let flame = FireFlame()
+        flame.position = self.player.position
+        flame.startMovement()
+        self.addChild(flame)
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        playerFire()
+    }
 }
 
 
