@@ -25,17 +25,17 @@ class GameScene: SKScene {
             self.player.performFly()
         }
         
-        spawnPowerUp()
+        spawnMissile()
         // делаем спаун врагов с задержкой 1сек и кол-вом
 //        spawnEnemy(count: 5)
         spawnEnemies()
     }
     
-    fileprivate func spawnPowerUp() {
-        let powerUp = PowerUp()
-        powerUp.performRotation()
-        powerUp.position = CGPoint(x: self.size.width / 2, y: self.size.height / 2)
-        self.addChild(powerUp)
+    fileprivate func spawnMissile() {
+        let missile = MissileGreen()
+        missile.performRotation()
+        missile.position = CGPoint(x: self.size.width / 2, y: self.size.height / 2)
+        self.addChild(missile)
         
     }
     
