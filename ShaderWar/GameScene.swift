@@ -61,8 +61,8 @@ class GameScene: SKScene {
     }
     
     fileprivate func spawnSpiralOfEnemies() {
-        let enemyTextureAtlas1 = SKTextureAtlas(named: "Bomb_2")
-        let enemyTextureAtlas2 = SKTextureAtlas(named: "Bomb_3")
+        let enemyTextureAtlas1 = Assets.shared.bomb_2Atlas
+        let enemyTextureAtlas2 = Assets.shared.bomb_3Atlas
         SKTextureAtlas.preloadTextureAtlases([enemyTextureAtlas1, enemyTextureAtlas2]) { [unowned self] in
             
             let randomNumber = Int(arc4random_uniform(2))
@@ -131,8 +131,6 @@ class GameScene: SKScene {
         
         player = PlayerPlane.popupate(at: CGPoint(x: screen.size.width / 2, y: 100))
         self.addChild(player)
-        
-        
     }
     
     override func didSimulatePhysics() {

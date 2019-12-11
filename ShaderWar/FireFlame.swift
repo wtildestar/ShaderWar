@@ -10,7 +10,7 @@ import SpriteKit
 
 class FireFlame: Flame {
     init() {
-        let textureAtlas = SKTextureAtlas(named: "Flame")
+        let textureAtlas = Assets.shared.flameAtlas
         super.init(textureAtlas: textureAtlas)
     }
     

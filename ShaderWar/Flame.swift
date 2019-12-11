@@ -24,7 +24,7 @@ class Flame: SKSpriteNode {
         textureNameBeginsWith = String(textureName.dropLast(6)) // откидываем последние 6 символов наименования текстуры
         super.init(texture: texture, color: .clear, size: initialSize)
         self.name = "flameSprite"
-        self.setScale(-0.36)
+        self.setScale(0.2)
         self.zPosition = 30
     }
     
