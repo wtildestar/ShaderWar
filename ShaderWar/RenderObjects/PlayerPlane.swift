@@ -29,7 +29,35 @@ class PlayerPlane: SKSpriteNode {
         playerPlane.position = point
         playerPlane.zPosition = 40
         
-        playerPlane.physicsBody = SKPhysicsBody(texture: playerPlaneTexture, alphaThreshold: 0.5, size: playerPlane.size)
+        // оффсеты
+        let offsetX = playerPlane.frame.size.width * playerPlane.anchorPoint.x
+        let offsetY = playerPlane.frame.size.height * playerPlane.anchorPoint.y
+        
+        // траектория
+        let path = CGMutablePath()
+        path.move(to: CGPoint(x: 2 - offsetX, y: 27 - offsetY))
+        path.addLine(to: CGPoint(x: 11 - offsetX, y: 27 - offsetY))
+        path.addLine(to: CGPoint(x: 14 - offsetX, y: 33 - offsetY))
+        path.addLine(to: CGPoint(x: 29 - offsetX, y: 34 - offsetY))
+        path.addLine(to: CGPoint(x: 31 - offsetX, y: 27 - offsetY))
+        path.addLine(to: CGPoint(x: 41 - offsetX, y: 24 - offsetY))
+        path.addLine(to: CGPoint(x: 43 - offsetX, y: 23 - offsetY))
+        path.addLine(to: CGPoint(x: 41 - offsetX, y: 16 - offsetY))
+        path.addLine(to: CGPoint(x: 25 - offsetX, y: 14 - offsetY))
+        path.addLine(to: CGPoint(x: 25 - offsetX, y: 7 - offsetY))
+        path.addLine(to: CGPoint(x: 30 - offsetX, y: 4 - offsetY))
+        path.addLine(to: CGPoint(x: 30 - offsetX, y: 0 - offsetY))
+        path.addLine(to: CGPoint(x: 12 - offsetX, y: 0 - offsetY))
+        path.addLine(to: CGPoint(x: 13 - offsetX, y: 4 - offsetY))
+        path.addLine(to: CGPoint(x: 17 - offsetX, y: 6 - offsetY))
+        path.addLine(to: CGPoint(x: 17 - offsetX, y: 14 - offsetY))
+        path.addLine(to: CGPoint(x: 3 - offsetX, y: 15 - offsetY))
+        path.addLine(to: CGPoint(x: 0 - offsetX, y: 17 - offsetY))
+        path.addLine(to: CGPoint(x: 0 - offsetX, y: 24 - offsetY))
+        path.closeSubpath()
+        playerPlane.physicsBody = SKPhysicsBody(polygonFrom: path)
+        
+//        playerPlane.physicsBody = SKPhysicsBody(texture: playerPlaneTexture, alphaThreshold: 0.5, size: playerPlane.size)
         playerPlane.physicsBody?.isDynamic = false // задаю false динамичности тела при столкновении фиксированное
         playerPlane.physicsBody?.categoryBitMask = BitMaskCategory.player
         playerPlane.physicsBody?.collisionBitMask = BitMaskCategory.enemy | BitMaskCategory.missile // задаю вражескую битовую маску для столкновения
