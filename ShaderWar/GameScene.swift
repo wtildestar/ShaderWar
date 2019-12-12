@@ -168,8 +168,23 @@ class GameScene: SKScene {
 }
 
 extension GameScene: SKPhysicsContactDelegate {
+    // автоматически регистрирует столкновения
     func didBegin(_ contact: SKPhysicsContact) {
-        print("contact detected")
+        // устанавливаю два сталкивающихся физических тела
+        let bodyA = contact.bodyA.categoryBitMask
+        let bodyB = contact.bodyB.categoryBitMask
+        let player = BitMaskCategory.player
+        let enemy = BitMaskCategory.enemy
+        let shot = BitMaskCategory.shot
+        let missile = BitMaskCategory.missile
+        
+        if bodyA == player && bodyB == enemy || bodyB == player && bodyA == enemy {
+            print("Enemy vs Player")
+        } else if bodyA == player && bodyB == missile || bodyB == player && bodyA == missile {
+            print("Missile vs Player")
+        } else if bodyA == shot && bodyB == enemy || bodyB == shot && bodyA == enemy {
+            print("Enemy vs Shot")
+        }
     }
     
     func didEnd(_ contact: SKPhysicsContact) {
