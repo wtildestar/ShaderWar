@@ -17,6 +17,11 @@ class GameScene: SKScene {
     var player: PlayerPlane!
     
     override func didMove(to view: SKView) {
+        // подписываюсь под протокол для регистрации столкновений
+        physicsWorld.contactDelegate = self
+        // приравниваю силу гравитации к нулю
+        physicsWorld.gravity = CGVector.zero
+        
         configureStartScene()
         spawnClouds()
         spawnIslands()
@@ -162,5 +167,12 @@ class GameScene: SKScene {
     }
 }
 
-
-
+extension GameScene: SKPhysicsContactDelegate {
+    func didBegin(_ contact: SKPhysicsContact) {
+        print("contact detected")
+    }
+    
+    func didEnd(_ contact: SKPhysicsContact) {
+        
+    }
+}

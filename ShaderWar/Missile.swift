@@ -24,6 +24,12 @@ class Missile: SKSpriteNode {
         self.name = "sprite"
         self.setScale(-0.36)
         self.zPosition = 20
+        
+        self.physicsBody = SKPhysicsBody(texture: texture, alphaThreshold: 0.5, size: self.size)
+        self.physicsBody?.isDynamic = true
+        self.physicsBody?.categoryBitMask = BitMaskCategory.missile
+        self.physicsBody?.collisionBitMask = BitMaskCategory.player
+        self.physicsBody?.contactTestBitMask = BitMaskCategory.player
     }
     
     func startMovement() {

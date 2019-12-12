@@ -26,6 +26,12 @@ class Flame: SKSpriteNode {
         self.name = "flameSprite"
         self.setScale(0.2)
         self.zPosition = 30
+        
+        self.physicsBody = SKPhysicsBody(texture: texture, alphaThreshold: 0.5, size: self.size)
+        self.physicsBody?.isDynamic = false
+        self.physicsBody?.categoryBitMask = BitMaskCategory.shot
+        self.physicsBody?.collisionBitMask = BitMaskCategory.enemy
+        self.physicsBody?.contactTestBitMask = BitMaskCategory.enemy
     }
     
     func startMovement() {
