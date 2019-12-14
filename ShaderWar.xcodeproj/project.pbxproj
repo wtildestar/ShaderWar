@@ -37,6 +37,7 @@
 		D7DF8E6C23991A0A00D4EA45 /* PowerUp.atlas in Resources */ = {isa = PBXBuildFile; fileRef = D7DF8E6B23991A0A00D4EA45 /* PowerUp.atlas */; };
 		D7EF9B0B23A52D0200584A78 /* ButtonNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7EF9B0A23A52D0200584A78 /* ButtonNode.swift */; };
 		D7EF9B0D23A5473800584A78 /* PauseScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7EF9B0C23A5473800584A78 /* PauseScene.swift */; };
+		D7EF9B0F23A55E9F00584A78 /* SceneManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7EF9B0E23A55E9F00584A78 /* SceneManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -72,6 +73,7 @@
 		D7DF8E6B23991A0A00D4EA45 /* PowerUp.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = PowerUp.atlas; sourceTree = "<group>"; };
 		D7EF9B0A23A52D0200584A78 /* ButtonNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonNode.swift; sourceTree = "<group>"; };
 		D7EF9B0C23A5473800584A78 /* PauseScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PauseScene.swift; sourceTree = "<group>"; };
+		D7EF9B0E23A55E9F00584A78 /* SceneManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,6 +121,7 @@
 			children = (
 				D759012923A10FEF00BFB93B /* bitMaskCategory.swift */,
 				D797B06823A0D16F009512FF /* Assets.swift */,
+				D7EF9B0E23A55E9F00584A78 /* SceneManager.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -283,6 +286,7 @@
 				D7DF8E662397C01C00D4EA45 /* protocol GameBackgroundSpriteable + Extension.swift in Sources */,
 				D797B06923A0D16F009512FF /* Assets.swift in Sources */,
 				D7527794239CDD1200EDB5E1 /* Enemy.swift in Sources */,
+				D7EF9B0F23A55E9F00584A78 /* SceneManager.swift in Sources */,
 				D7DF8E6023950FCF00D4EA45 /* Island.swift in Sources */,
 				D7DF8E6A239913DA00D4EA45 /* Missile.swift in Sources */,
 				D759012A23A10FEF00BFB93B /* bitMaskCategory.swift in Sources */,

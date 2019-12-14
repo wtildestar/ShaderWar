@@ -12,11 +12,19 @@ import GameplayKit
 
 class GameScene: SKScene {
 
+    let sceneManager = SceneManager.shared
+    
     fileprivate var player: PlayerPlane!
     fileprivate let hud = HUD()
     fileprivate let screenSize = UIScreen.main.bounds.size
     
     override func didMove(to view: SKView) {
+        
+        // checking if scene persist
+        guard sceneManager.gameScene == nil else { return }
+        // сохраняем сцену
+        sceneManager.gameScene = self
+        
         // подписываюсь под протокол для регистрации столкновений
         physicsWorld.contactDelegate = self
         // приравниваю силу гравитации к нулю
