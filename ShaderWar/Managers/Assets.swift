@@ -11,6 +11,7 @@ import SpriteKit
 // Подгружаем класс singleton в appdelegate
 class Assets {
     static let shared = Assets()
+    var isLoaded = false
     let flameAtlas = SKTextureAtlas(named: "Flame")
     let missileRedAtlas = SKTextureAtlas(named: "MissileRed")
     let missileGreenAtlas = SKTextureAtlas(named: "MissileGreen")

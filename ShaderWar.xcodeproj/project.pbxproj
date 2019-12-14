@@ -35,6 +35,7 @@
 		D7DF8E682398778700D4EA45 /* PlayerPlane.atlas in Resources */ = {isa = PBXBuildFile; fileRef = D7DF8E672398778600D4EA45 /* PlayerPlane.atlas */; };
 		D7DF8E6A239913DA00D4EA45 /* Missile.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7DF8E69239913DA00D4EA45 /* Missile.swift */; };
 		D7DF8E6C23991A0A00D4EA45 /* PowerUp.atlas in Resources */ = {isa = PBXBuildFile; fileRef = D7DF8E6B23991A0A00D4EA45 /* PowerUp.atlas */; };
+		D7EF9B0B23A52D0200584A78 /* ButtonNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7EF9B0A23A52D0200584A78 /* ButtonNode.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -68,6 +69,7 @@
 		D7DF8E672398778600D4EA45 /* PlayerPlane.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = PlayerPlane.atlas; sourceTree = "<group>"; };
 		D7DF8E69239913DA00D4EA45 /* Missile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Missile.swift; sourceTree = "<group>"; };
 		D7DF8E6B23991A0A00D4EA45 /* PowerUp.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = PowerUp.atlas; sourceTree = "<group>"; };
+		D7EF9B0A23A52D0200584A78 /* ButtonNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonNode.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -141,6 +143,7 @@
 				D7AF8274239EA2F200555155 /* MissileGreen.swift */,
 				D7AF8272239EA2DD00555155 /* MissileRed.swift */,
 				D755696423A507090005C79F /* HUD.swift */,
+				D7EF9B0A23A52D0200584A78 /* ButtonNode.swift */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -285,6 +288,7 @@
 				D755696523A507090005C79F /* HUD.swift in Sources */,
 				D7AF827E239EEA3900555155 /* Flame.swift in Sources */,
 				D7DF8E5E2395078900D4EA45 /* Background.swift in Sources */,
+				D7EF9B0B23A52D0200584A78 /* ButtonNode.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
