@@ -36,6 +36,7 @@
 		D7DF8E6A239913DA00D4EA45 /* Missile.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7DF8E69239913DA00D4EA45 /* Missile.swift */; };
 		D7DF8E6C23991A0A00D4EA45 /* PowerUp.atlas in Resources */ = {isa = PBXBuildFile; fileRef = D7DF8E6B23991A0A00D4EA45 /* PowerUp.atlas */; };
 		D7EF9B0B23A52D0200584A78 /* ButtonNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7EF9B0A23A52D0200584A78 /* ButtonNode.swift */; };
+		D7EF9B0D23A5473800584A78 /* PauseScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7EF9B0C23A5473800584A78 /* PauseScene.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -70,6 +71,7 @@
 		D7DF8E69239913DA00D4EA45 /* Missile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Missile.swift; sourceTree = "<group>"; };
 		D7DF8E6B23991A0A00D4EA45 /* PowerUp.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = PowerUp.atlas; sourceTree = "<group>"; };
 		D7EF9B0A23A52D0200584A78 /* ButtonNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonNode.swift; sourceTree = "<group>"; };
+		D7EF9B0C23A5473800584A78 /* PauseScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PauseScene.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,6 +128,7 @@
 			children = (
 				D759012723A0FA0E00BFB93B /* MenuScene.swift */,
 				D7DF8E4B2394F7EB00D4EA45 /* GameScene.swift */,
+				D7EF9B0C23A5473800584A78 /* PauseScene.swift */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -181,8 +184,8 @@
 		D7DF8E442394F7EB00D4EA45 /* ShaderWar */ = {
 			isa = PBXGroup;
 			children = (
-				D759012B23A26EEB00BFB93B /* Classes */,
 				D755696A23A50E040005C79F /* Scenes */,
+				D759012B23A26EEB00BFB93B /* Classes */,
 				D755696923A50DE90005C79F /* Managers */,
 				D755696823A50DAD0005C79F /* Protocols + Extensions */,
 				D755696723A50D950005C79F /* Controllers */,
@@ -285,6 +288,7 @@
 				D759012A23A10FEF00BFB93B /* bitMaskCategory.swift in Sources */,
 				D7AF8273239EA2DD00555155 /* MissileRed.swift in Sources */,
 				D759012823A0FA0E00BFB93B /* MenuScene.swift in Sources */,
+				D7EF9B0D23A5473800584A78 /* PauseScene.swift in Sources */,
 				D755696523A507090005C79F /* HUD.swift in Sources */,
 				D7AF827E239EEA3900555155 /* Flame.swift in Sources */,
 				D7DF8E5E2395078900D4EA45 /* Background.swift in Sources */,

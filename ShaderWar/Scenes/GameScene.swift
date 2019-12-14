@@ -164,7 +164,19 @@ class GameScene: SKScene {
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        playerFire()
+        let location = touches.first!.location(in: self)
+        // получаю объект под той областью на которую нажал
+        let node = self.atPoint(location)
+        
+        if node.name == "pause" {
+            let transition = SKTransition.doorway(withDuration: 1.0) //crossFade(withDuration: 1.0)
+            // создаю сцену на которую перехожу
+            let pauseScene = PauseScene(size: self.size)
+            pauseScene.scaleMode = .aspectFill
+            self.scene!.view?.presentScene(pauseScene, transition: transition)
+        } else {
+            playerFire()
+        }
     }
 }
 
