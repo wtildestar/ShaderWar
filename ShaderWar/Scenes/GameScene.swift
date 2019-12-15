@@ -20,6 +20,9 @@ class GameScene: SKScene {
     
     override func didMove(to view: SKView) {
         
+        // Снимаем паузу
+        self.scene?.isPaused = false
+        
         // checking if scene persist
         guard sceneManager.gameScene == nil else { return }
         // сохраняем сцену
@@ -181,6 +184,9 @@ class GameScene: SKScene {
             // создаю сцену на которую перехожу
             let pauseScene = PauseScene(size: self.size)
             pauseScene.scaleMode = .aspectFill
+            // сохраняем состояние в менеджер
+            sceneManager.gameScene = self
+            self.scene?.isPaused = true
             self.scene!.view?.presentScene(pauseScene, transition: transition)
         } else {
             playerFire()

@@ -31,6 +31,14 @@ class PauseScene: SKScene {
         }
     }
     
+    override func update(_ currentTime: TimeInterval) {
+        if let gameScene = sceneManager.gameScene {
+            if !gameScene.isPaused {
+                gameScene.isPaused = true
+            }
+        }
+    }
+    
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         let location = touches.first!.location(in: self)
         // получаю объект под той областью на которую нажал
@@ -44,9 +52,8 @@ class PauseScene: SKScene {
             gameScene.scaleMode = .aspectFill
             self.scene!.view?.presentScene(gameScene, transition: transition)
         } else if node.name == "resume" {
-            
             let transition = SKTransition.crossFade(withDuration: 1.0)
-            guard let  gameScene = sceneManager.gameScene else { return }
+            guard let gameScene = sceneManager.gameScene else { return }
             // создаю сцену на которую перехожу
             gameScene.scaleMode = .aspectFill
             self.scene!.view?.presentScene(gameScene, transition: transition)
