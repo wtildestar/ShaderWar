@@ -10,7 +10,6 @@ import SpriteKit
 
 class OptionsScene: ParentScene {
     override func didMove(to view: SKView) {
-        self.backgroundColor = SKColor(red: 0.15, green: 0.15, blue: 0.3, alpha: 1.0)
         setHeader(withName: "options", andBackground: "buttonBackground")
         
         let musicBtn = ButtonNode(titled: nil, backgroundName: "music")
@@ -27,10 +26,10 @@ class OptionsScene: ParentScene {
         soundBtn.setScale(0.1)
         addChild(soundBtn)
         
-        let back = ButtonNode(titled: nil, backgroundName: "buttonBackground")
+        let back = ButtonNode(titled: "back", backgroundName: "buttonBackground")
         back.position = CGPoint(x: self.frame.midX, y: self.frame.midY - 100)
         back.name = "back"
-        back.label.isHidden = true
+        back.label.name = "back"
         back.setScale(0.1)
         addChild(back)
     }

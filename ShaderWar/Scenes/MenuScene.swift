@@ -14,12 +14,11 @@ class MenuScene: ParentScene {
             Assets.shared.preloadAssets()
             Assets.shared.isLoaded = true
         }
-        self.backgroundColor = SKColor(red: 0.15, green: 0.15, blue: 0.3, alpha: 1.0)
         setHeader(withName: nil, andBackground: "paused")
-        let header = SKSpriteNode(imageNamed: "paused")
-//        header.position = CGPoint(x: self.frame.midX, y: self.frame.midY + 150)
-//        header.setScale(0.2)
-//        self.addChild(header)
+        //        let header = SKSpriteNode(imageNamed: "paused")
+        //        header.position = CGPoint(x: self.frame.midX, y: self.frame.midY + 150)
+        //        header.setScale(0.2)
+        //        self.addChild(header)
         
         let titles = ["play", "options", "best"]
         
@@ -53,6 +52,15 @@ class MenuScene: ParentScene {
             // создаю сцену на которую перехожу
             optionsScene.scaleMode = .aspectFill
             self.scene!.view?.presentScene(optionsScene, transition: transition)
+        }
+        else if node.name == "best" {
+            let transition = SKTransition.crossFade(withDuration: 1.0)
+            let bestScene = BestScene(size: self.size)
+            // наша сцена будет обратной сценой для optionsScene
+            bestScene.backScene = self
+            // создаю сцену на которую перехожу
+            bestScene.scaleMode = .aspectFill
+            self.scene!.view?.presentScene(bestScene, transition: transition)
         }
     }
 }
