@@ -12,6 +12,7 @@ class MissileRed: Missile {
     init() {
         let textureAtlas = Assets.shared.missileRedAtlas
         super.init(textureAtlas: textureAtlas)
+        name = "missileRed"
     }
     
     required init?(coder aDecoder: NSCoder) {

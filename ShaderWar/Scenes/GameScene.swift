@@ -58,7 +58,7 @@ class GameScene: ParentScene {
         
         spawnMissile()
         // делаем спаун врагов с задержкой 1сек и кол-вом
-//        spawnEnemy(count: 5)
+        //        spawnEnemy(count: 5)
         spawnEnemies()
         createHUD()
     }
@@ -178,6 +178,18 @@ class GameScene: ParentScene {
             }
         }
         
+        enumerateChildNodes(withName: "missileGreen") { (node, stop) in
+            if node.position.y <= -100 {
+                node.removeFromParent()
+            }
+        }
+        
+        enumerateChildNodes(withName: "missileRed") { (node, stop) in
+            if node.position.y <= -100 {
+                node.removeFromParent()
+            }
+        }
+        
         enumerateChildNodes(withName: "flameSprite") { (node, stop) in
             if node.position.y >= self.size.height + 100 {
                 node.removeFromParent()
@@ -238,16 +250,25 @@ extension GameScene: SKPhysicsContactDelegate {
                 lives -= 1
             }
         }
-            addChild(explosion!)
+        addChild(explosion!)
         self.run(waitForExplosionAction) { explosion?.removeFromParent() }
+        
+        if lives == 0 {
+            let gameOverScene = GameOverScene(size: self.size)
+            gameOverScene.scaleMode = .aspectFill
+            let transition = SKTransition.doorsCloseVertical(withDuration: 1.0)
+            self.scene!.view?.presentScene(gameOverScene, transition: transition)
+        }
             
         case [.missile, .player]: print("Missile vs Player")
+            
         case [.enemy, .shot]:
             print("Enemy vs Shot")
+            hud.score += 5
             contact.bodyA.node?.removeFromParent()
             contact.bodyB.node?.removeFromParent()
             addChild(explosion!)
-        self.run(waitForExplosionAction) { explosion?.removeFromParent() }
+            self.run(waitForExplosionAction) { explosion?.removeFromParent() }
             
         default: preconditionFailure("Unable to detect collision category")
         }
