@@ -27,7 +27,7 @@ class MenuScene: ParentScene {
             button1.position = CGPoint(x: self.frame.midX, y: self.frame.midY - CGFloat(100 * index))
             button1.name = title
             button1.label.name = title
-            button1.setScale(0.1)
+            button1.setScale(0.2)
             addChild(button1)
         }
     }

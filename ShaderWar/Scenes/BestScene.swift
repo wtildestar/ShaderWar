@@ -14,13 +14,14 @@ class BestScene: ParentScene {
     
     override func didMove(to view: SKView) {
         self.backgroundColor = SKColor(red: 0.15, green: 0.15, blue: 0.3, alpha: 1.0)
-        setHeader(withName: "best", andBackground: "buttonBackground")
+        setHeader(withName: "best", andBackground: "buttonLongBackground")
         
         let back = ButtonNode(titled: "back", backgroundName: "buttonBackground")
         back.position = CGPoint(x: self.frame.midX, y: self.frame.midY - 200)
         back.name = "back"
         back.label.name = "back"
-        back.setScale(0.1)
+        back.label.fontSize = 100
+        back.setScale(0.2)
         addChild(back)
         
         let topPlaces = places.sorted { $0 > $1 }.prefix(3)

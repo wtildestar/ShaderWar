@@ -16,21 +16,21 @@ class OptionsScene: ParentScene {
         musicBtn.position = CGPoint(x: self.frame.midX - 50, y: self.frame.midY)
         musicBtn.name = "music"
         musicBtn.label.isHidden = true
-        musicBtn.setScale(0.1)
+        musicBtn.setScale(0.2)
         addChild(musicBtn)
         
-        let soundBtn = ButtonNode(titled: nil, backgroundName: "music")
+        let soundBtn = ButtonNode(titled: nil, backgroundName: "sound")
         soundBtn.position = CGPoint(x: self.frame.midX + 50, y: self.frame.midY)
         soundBtn.name = "sound"
         soundBtn.label.isHidden = true
-        soundBtn.setScale(0.1)
+        soundBtn.setScale(0.2)
         addChild(soundBtn)
         
         let back = ButtonNode(titled: "back", backgroundName: "buttonBackground")
         back.position = CGPoint(x: self.frame.midX, y: self.frame.midY - 100)
         back.name = "back"
         back.label.name = "back"
-        back.setScale(0.1)
+        back.setScale(0.2)
         addChild(back)
     }
     

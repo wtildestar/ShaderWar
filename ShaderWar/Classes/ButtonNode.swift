@@ -16,7 +16,7 @@ class ButtonNode: SKSpriteNode {
         l.horizontalAlignmentMode = .center
         l.verticalAlignmentMode = .center
         l.zPosition = 2
-        l.fontSize = 30
+        l.fontSize = 100
         return l
     }()
     
@@ -26,7 +26,7 @@ class ButtonNode: SKSpriteNode {
         if let title = title {
             label.text = title.uppercased()
         }
-        label.fontSize = 300
+//        label.fontSize = 30
         addChild(label)
     }
     
