@@ -261,14 +261,36 @@ extension GameScene: SKPhysicsContactDelegate {
         }
             
         case [.missile, .player]: print("Missile vs Player")
+        
+        if contact.bodyA.node?.parent != nil && contact.bodyB.node?.parent != nil {
+            if contact.bodyA.node?.name == "missileGreen" {
+                contact.bodyA.node?.removeFromParent()
+                lives = 3
+                player.missileGreen()
+            } else if contact.bodyB.node?.name == "missileGreen" {
+                contact.bodyA.node?.removeFromParent()
+                lives = 3
+                player.missileGreen()
+            }
             
-        case [.enemy, .shot]:
-            print("Enemy vs Shot")
-            hud.score += 5
+            if contact.bodyA.node?.name == "missileRed" {
+                contact.bodyA.node?.removeFromParent()
+                player.missileRed()
+            } else {
+                contact.bodyB.node?.removeFromParent()
+                player.missileRed()
+            }
+        }
+            
+        case [.enemy, .shot]: print("Enemy vs Shot")
+        if contact.bodyA.node?.parent != nil {
             contact.bodyA.node?.removeFromParent()
             contact.bodyB.node?.removeFromParent()
+            hud.score += 5
             addChild(explosion!)
             self.run(waitForExplosionAction) { explosion?.removeFromParent() }
+        }
+            
             
         default: preconditionFailure("Unable to detect collision category")
         }

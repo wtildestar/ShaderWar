@@ -160,6 +160,22 @@ class PlayerPlane: SKSpriteNode {
             self.stillTurning = false
         }
     }
+    
+    func missileGreen() {
+        let colorAction = SKAction.colorize(with: .green, colorBlendFactor: 1.0, duration: 0.2)
+        let uncolorAction = SKAction.colorize(with: .green, colorBlendFactor: 0.0, duration: 0.2)
+        let sequenceAction = SKAction.sequence([colorAction, uncolorAction])
+        let repeatAction = SKAction.repeat(sequenceAction, count: 5)
+        self.run(repeatAction)
+    }
+    
+    func missileRed() {
+        let colorAction = SKAction.colorize(with: .red, colorBlendFactor: 1.0, duration: 0.2)
+        let uncolorAction = SKAction.colorize(with: .red, colorBlendFactor: 0.0, duration: 0.2)
+        let sequenceAction = SKAction.sequence([colorAction, uncolorAction])
+        let repeatAction = SKAction.repeat(sequenceAction, count: 5)
+        self.run(repeatAction)
+    }
 }
 
 enum TurnDirection {
