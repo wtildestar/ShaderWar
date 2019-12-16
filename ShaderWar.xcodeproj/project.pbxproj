@@ -26,6 +26,8 @@
 		D7BC632D23A6C3E5006FA2B7 /* BestScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7BC632C23A6C3E5006FA2B7 /* BestScene.swift */; };
 		D7DAF63B23A7847F00598434 /* EnemyExplosion.sks in Resources */ = {isa = PBXBuildFile; fileRef = D7DAF63923A7847F00598434 /* EnemyExplosion.sks */; };
 		D7DAF63F23A7D99400598434 /* GameOverScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7DAF63E23A7D99400598434 /* GameOverScene.swift */; };
+		D7DAF64123A8214900598434 /* backgroundMusic.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = D7DAF64023A8214900598434 /* backgroundMusic.mp3 */; };
+		D7DAF64323A8247D00598434 /* Fire.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = D7DAF64223A8247C00598434 /* Fire.mp3 */; };
 		D7DF8E462394F7EB00D4EA45 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7DF8E452394F7EB00D4EA45 /* AppDelegate.swift */; };
 		D7DF8E4C2394F7EB00D4EA45 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7DF8E4B2394F7EB00D4EA45 /* GameScene.swift */; };
 		D7DF8E4E2394F7EB00D4EA45 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7DF8E4D2394F7EB00D4EA45 /* GameViewController.swift */; };
@@ -65,6 +67,8 @@
 		D7BC632C23A6C3E5006FA2B7 /* BestScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BestScene.swift; sourceTree = "<group>"; };
 		D7DAF63923A7847F00598434 /* EnemyExplosion.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = EnemyExplosion.sks; sourceTree = "<group>"; };
 		D7DAF63E23A7D99400598434 /* GameOverScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameOverScene.swift; sourceTree = "<group>"; };
+		D7DAF64023A8214900598434 /* backgroundMusic.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = backgroundMusic.mp3; sourceTree = "<group>"; };
+		D7DAF64223A8247C00598434 /* Fire.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Fire.mp3; sourceTree = "<group>"; };
 		D7DF8E422394F7EB00D4EA45 /* ShaderWar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ShaderWar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D7DF8E452394F7EB00D4EA45 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D7DF8E4B2394F7EB00D4EA45 /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
@@ -100,6 +104,8 @@
 		D755696623A50D740005C79F /* Supporting files */ = {
 			isa = PBXGroup;
 			children = (
+				D7DAF64223A8247C00598434 /* Fire.mp3 */,
+				D7DAF64023A8214900598434 /* backgroundMusic.mp3 */,
 				D7DF8E452394F7EB00D4EA45 /* AppDelegate.swift */,
 				D7DF8E5D2395078900D4EA45 /* Background.swift */,
 				D7DF8E4F2394F7EB00D4EA45 /* Main.storyboard */,
@@ -281,6 +287,8 @@
 			files = (
 				D7527798239D531200EDB5E1 /* Bomb_2.atlas in Resources */,
 				D7DF8E512394F7EB00D4EA45 /* Main.storyboard in Resources */,
+				D7DAF64323A8247D00598434 /* Fire.mp3 in Resources */,
+				D7DAF64123A8214900598434 /* backgroundMusic.mp3 in Resources */,
 				D7DF8E6C23991A0A00D4EA45 /* PowerUp.atlas in Resources */,
 				D7DF8E682398778700D4EA45 /* PlayerPlane.atlas in Resources */,
 				D7AF8279239EA89400555155 /* MissileRed.atlas in Resources */,

@@ -12,6 +12,8 @@ import GameplayKit
 
 class GameScene: ParentScene {
     
+    var backgroundMusic: SKAudioNode!
+    
     fileprivate var player: PlayerPlane!
     fileprivate let hud = HUD()
     fileprivate let screenSize = UIScreen.main.bounds.size
@@ -37,6 +39,11 @@ class GameScene: ParentScene {
     }
     
     override func didMove(to view: SKView) {
+        
+        if let musicURL = Bundle.main.url(forResource: "backgroundMusic", withExtension: "mp3") {
+            backgroundMusic = SKAudioNode(url: musicURL)
+            addChild(backgroundMusic)
+        }
         
         // Снимаем паузу
         self.scene?.isPaused = false
@@ -283,9 +290,11 @@ extension GameScene: SKPhysicsContactDelegate {
         }
             
         case [.enemy, .shot]: print("Enemy vs Shot")
-        if contact.bodyA.node?.parent != nil {
+        
+        if contact.bodyA.node?.parent != nil && contact.bodyB.node?.parent != nil {
             contact.bodyA.node?.removeFromParent()
             contact.bodyB.node?.removeFromParent()
+            self.run(SKAction.playSoundFileNamed("Fire", waitForCompletion: false))
             hud.score += 5
             addChild(explosion!)
             self.run(waitForExplosionAction) { explosion?.removeFromParent() }
