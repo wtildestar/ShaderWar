@@ -10,9 +10,13 @@ import SpriteKit
 
 class BestScene: ParentScene {
     
-    var places = [10, 100, 1000]
+    var places: [Int]!
     
     override func didMove(to view: SKView) {
+        
+        gameSettings.loadScores()
+        places = gameSettings.highscore
+        
         self.backgroundColor = SKColor(red: 0.15, green: 0.15, blue: 0.3, alpha: 1.0)
         setHeader(withName: "best", andBackground: "buttonLongBackground")
         
@@ -24,8 +28,7 @@ class BestScene: ParentScene {
         back.setScale(0.2)
         addChild(back)
         
-        let topPlaces = places.sorted { $0 > $1 }.prefix(3)
-        for (index, value) in topPlaces.enumerated() {
+        for (index, value) in places.enumerated() {
             let l = SKLabelNode(text: value.description)
             l.fontColor = UIColor(red: 219/255, green: 226/225, blue: 215/225, alpha: 1.0)
             l.fontName = "AmericanTypewriter-Bold"
