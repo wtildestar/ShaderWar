@@ -1,3 +1,3 @@
 # ShaderWar
 
-A full game in order to study the SpriteKit framework
+A full game in order to study the SpriteKit framework.
