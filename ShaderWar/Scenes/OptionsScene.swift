@@ -25,7 +25,7 @@ class OptionsScene: ParentScene {
         musicBtn.position = CGPoint(x: self.frame.midX - 50, y: self.frame.midY)
         musicBtn.name = "music"
         musicBtn.label.isHidden = true
-        musicBtn.setScale(0.2)
+        musicBtn.setScale(0.25)
         addChild(musicBtn)
         
         let backgroundNameForSound = isSound == true ? "sound" : "nosound"
@@ -33,11 +33,11 @@ class OptionsScene: ParentScene {
         soundBtn.position = CGPoint(x: self.frame.midX + 50, y: self.frame.midY)
         soundBtn.name = "sound"
         soundBtn.label.isHidden = true
-        soundBtn.setScale(0.2)
+        soundBtn.setScale(0.25)
         addChild(soundBtn)
         
         let back = ButtonNode(titled: "back", backgroundName: "buttonBackground")
-        back.position = CGPoint(x: self.frame.midX, y: self.frame.midY - 100)
+        back.position = CGPoint(x: self.frame.midX, y: self.frame.midY - 150)
         back.name = "back"
         back.label.name = "back"
         back.setScale(0.2)
@@ -63,7 +63,7 @@ class OptionsScene: ParentScene {
             gameSettings.isMusic = isMusic
             gameSettings.saveGameSettings()
             
-            let transition = SKTransition.crossFade(withDuration: 1.0)
+            let transition = SKTransition.crossFade(withDuration: 0.4)
             guard let backScene = backScene else { return }
             // создаю сцену на которую перехожу
             backScene.scaleMode = .aspectFill

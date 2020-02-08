@@ -12,11 +12,11 @@ class ButtonNode: SKSpriteNode {
     let label: SKLabelNode = {
         let l = SKLabelNode(text: "")
         l.fontColor = UIColor(red: 219/255, green: 226/225, blue: 215/225, alpha: 1.0)
-        l.fontName = "AmericanTypewriter-Bold"
+        l.fontName = "ArialRoundedMTBold"
         l.horizontalAlignmentMode = .center
         l.verticalAlignmentMode = .center
         l.zPosition = 2
-        l.fontSize = 100
+        l.fontSize = 140
         return l
     }()
     
@@ -26,7 +26,6 @@ class ButtonNode: SKSpriteNode {
         if let title = title {
             label.text = title.uppercased()
         }
-//        label.fontSize = 30
         addChild(label)
     }
     

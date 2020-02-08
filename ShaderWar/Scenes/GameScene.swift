@@ -49,8 +49,6 @@ class GameScene: ParentScene {
             }
         }
         
-        
-        
         // Снимаем паузу
         self.scene?.isPaused = false
         
@@ -223,7 +221,7 @@ class GameScene: ParentScene {
         let node = self.atPoint(location)
         
         if node.name == "pause" {
-            let transition = SKTransition.doorway(withDuration: 1.0) //crossFade(withDuration: 1.0)
+            let transition = SKTransition.fade(withDuration: 0.4) //crossFade(withDuration: 1.0)
             // создаю сцену на которую перехожу
             let pauseScene = PauseScene(size: self.size)
             pauseScene.scaleMode = .aspectFill
@@ -273,7 +271,7 @@ extension GameScene: SKPhysicsContactDelegate {
             
             let gameOverScene = GameOverScene(size: self.size)
             gameOverScene.scaleMode = .aspectFill
-            let transition = SKTransition.doorsCloseVertical(withDuration: 1.0)
+            let transition = SKTransition.fade(withDuration: 0.4)
             self.scene!.view?.presentScene(gameOverScene, transition: transition)
         }
             

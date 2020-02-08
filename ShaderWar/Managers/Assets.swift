@@ -8,7 +8,6 @@
 
 import SpriteKit
 
-// Подгружаем класс singleton в appdelegate
 class Assets {
     static let shared = Assets()
     var isLoaded = false

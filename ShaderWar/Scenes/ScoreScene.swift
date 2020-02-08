@@ -8,7 +8,7 @@
 
 import SpriteKit
 
-class BestScene: ParentScene {
+class ScoreScene: ParentScene {
     
     var places: [Int]!
     
@@ -18,13 +18,13 @@ class BestScene: ParentScene {
         places = gameSettings.highscore
         
         self.backgroundColor = SKColor(red: 0.15, green: 0.15, blue: 0.3, alpha: 1.0)
-        setHeader(withName: "best", andBackground: "buttonLongBackground")
+        setHeader(withName: "score", andBackground: "buttonLongBackground")
         
         let back = ButtonNode(titled: "back", backgroundName: "buttonBackground")
         back.position = CGPoint(x: self.frame.midX, y: self.frame.midY - 200)
         back.name = "back"
         back.label.name = "back"
-        back.label.fontSize = 100
+        back.label.fontSize = 120
         back.setScale(0.2)
         addChild(back)
         
@@ -33,9 +33,10 @@ class BestScene: ParentScene {
             l.fontColor = UIColor(red: 219/255, green: 226/225, blue: 215/225, alpha: 1.0)
             l.fontName = "AmericanTypewriter-Bold"
             l.fontSize = 30
-            l.position = CGPoint(x: self.frame.midX, y: self.frame.midY - CGFloat(index * 60))
+            l.position = CGPoint(x: self.frame.midX, y: self.frame.midY + 20 - CGFloat(index * 60))
             addChild(l)
         }
+        
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -43,7 +44,7 @@ class BestScene: ParentScene {
         let node = self.atPoint(location)
         
         if node.name == "back" {
-            let transition = SKTransition.crossFade(withDuration: 1.0)
+            let transition = SKTransition.crossFade(withDuration: 0.4)
             guard let backScene = backScene else { return }
             backScene.scaleMode = .aspectFill
             self.scene!.view?.presentScene(backScene, transition: transition)

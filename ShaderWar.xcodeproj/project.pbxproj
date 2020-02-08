@@ -23,7 +23,7 @@
 		D7AF827E239EEA3900555155 /* Flame.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7AF827D239EEA3900555155 /* Flame.swift */; };
 		D7B195C3239F09B300894AC1 /* FireFlame.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7B195C2239F09B300894AC1 /* FireFlame.swift */; };
 		D7BC632B23A69CB8006FA2B7 /* OptionsScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7BC632A23A69CB8006FA2B7 /* OptionsScene.swift */; };
-		D7BC632D23A6C3E5006FA2B7 /* BestScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7BC632C23A6C3E5006FA2B7 /* BestScene.swift */; };
+		D7BC632D23A6C3E5006FA2B7 /* ScoreScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7BC632C23A6C3E5006FA2B7 /* ScoreScene.swift */; };
 		D7DAF63B23A7847F00598434 /* EnemyExplosion.sks in Resources */ = {isa = PBXBuildFile; fileRef = D7DAF63923A7847F00598434 /* EnemyExplosion.sks */; };
 		D7DAF63F23A7D99400598434 /* GameOverScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7DAF63E23A7D99400598434 /* GameOverScene.swift */; };
 		D7DAF64123A8214900598434 /* backgroundMusic.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = D7DAF64023A8214900598434 /* backgroundMusic.mp3 */; };
@@ -65,7 +65,7 @@
 		D7AF827D239EEA3900555155 /* Flame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Flame.swift; sourceTree = "<group>"; };
 		D7B195C2239F09B300894AC1 /* FireFlame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FireFlame.swift; sourceTree = "<group>"; };
 		D7BC632A23A69CB8006FA2B7 /* OptionsScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionsScene.swift; sourceTree = "<group>"; };
-		D7BC632C23A6C3E5006FA2B7 /* BestScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BestScene.swift; sourceTree = "<group>"; };
+		D7BC632C23A6C3E5006FA2B7 /* ScoreScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreScene.swift; sourceTree = "<group>"; };
 		D7DAF63923A7847F00598434 /* EnemyExplosion.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = EnemyExplosion.sks; sourceTree = "<group>"; };
 		D7DAF63E23A7D99400598434 /* GameOverScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameOverScene.swift; sourceTree = "<group>"; };
 		D7DAF64023A8214900598434 /* backgroundMusic.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = backgroundMusic.mp3; sourceTree = "<group>"; };
@@ -154,7 +154,7 @@
 				D7BC632A23A69CB8006FA2B7 /* OptionsScene.swift */,
 				D7EF9B0C23A5473800584A78 /* PauseScene.swift */,
 				D757A93D23A6537700B8CE08 /* ParentScene.swift */,
-				D7BC632C23A6C3E5006FA2B7 /* BestScene.swift */,
+				D7BC632C23A6C3E5006FA2B7 /* ScoreScene.swift */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -327,7 +327,7 @@
 				D7DF8E6023950FCF00D4EA45 /* Island.swift in Sources */,
 				D7DF8E6A239913DA00D4EA45 /* Missile.swift in Sources */,
 				D759012A23A10FEF00BFB93B /* bitMaskCategory.swift in Sources */,
-				D7BC632D23A6C3E5006FA2B7 /* BestScene.swift in Sources */,
+				D7BC632D23A6C3E5006FA2B7 /* ScoreScene.swift in Sources */,
 				D7AF8273239EA2DD00555155 /* MissileRed.swift in Sources */,
 				D759012823A0FA0E00BFB93B /* MenuScene.swift in Sources */,
 				D757A93E23A6537700B8CE08 /* ParentScene.swift in Sources */,
