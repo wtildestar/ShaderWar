@@ -8,7 +8,11 @@
 
 import SpriteKit
 
-class ParentScene: SKScene {
+class ParentScene: SKScene, CanReceiveTransitionEvents {
+    func viewWillTransition(to size: CGSize) {
+        
+    }
+    
     let gameSettings = GameSettings()
     let sceneManager = SceneManager.shared
     var backScene: SKScene?

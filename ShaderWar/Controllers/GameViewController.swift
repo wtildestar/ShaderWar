@@ -28,6 +28,7 @@ class GameViewController: UIViewController {
             view.showsFPS = true
             
             view.showsNodeCount = true
+
         }
     }
     
@@ -35,12 +36,38 @@ class GameViewController: UIViewController {
         return true
     }
     
-//    override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
-//
-////        return .landscape
-//
-//    }
+    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
 
+        super.viewWillTransition(to: size, with: coordinator)
+
+        guard
+            let skView = self.view as? SKView,
+            let canReceiveRotationEvents = skView.scene as? CanReceiveTransitionEvents else { return }
+        
+        guard let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene, windowScene.activationState == .foregroundActive, let _ = windowScene.windows.first else { return }
+
+        switch windowScene.interfaceOrientation {
+        case .unknown:
+            print("unknown")
+
+        case .portrait:
+            print("portrait")
+
+        case .portraitUpsideDown:
+            print("portraitUpsideDown")
+
+        case .landscapeLeft:
+            print("landscapeLeft")
+
+        case .landscapeRight:
+            print("landscapeRight")
+
+        @unknown default:
+            print("default")
+        }
+        canReceiveRotationEvents.viewWillTransition(to: size)
+    }
+    
     override var prefersStatusBarHidden: Bool {
         return true
     }

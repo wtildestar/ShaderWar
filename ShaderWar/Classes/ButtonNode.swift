@@ -16,7 +16,7 @@ class ButtonNode: SKSpriteNode {
         l.horizontalAlignmentMode = .center
         l.verticalAlignmentMode = .center
         l.zPosition = 2
-        l.fontSize = 140
+        l.fontSize = 120
         return l
     }()
     

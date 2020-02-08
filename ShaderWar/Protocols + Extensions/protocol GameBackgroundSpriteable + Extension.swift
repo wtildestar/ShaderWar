@@ -14,6 +14,10 @@ protocol GameBackgroundSpriteable {
     static func randomPoint() -> CGPoint
 }
 
+protocol CanReceiveTransitionEvents {
+    func viewWillTransition(to size: CGSize)
+}
+
 extension GameBackgroundSpriteable {
     static func randomPoint() -> CGPoint {
         let screen = UIScreen.main.bounds

@@ -17,29 +17,22 @@ class MenuScene: ParentScene {
         }
            
         setHeader(withName: nil, andBackground: "paused")
-        //        let header = SKSpriteNode(imageNamed: "paused")
-        //        header.position = CGPoint(x: self.frame.midX, y: self.frame.midY + 150)
-        //        header.setScale(0.2)
-        //        self.addChild(header)
         
         let titles = ["play", "options", "score"]
         
         for (index, title) in titles.enumerated() {
-            let button1 = ButtonNode(titled: title, backgroundName: "buttonBackground")
-            button1.position = CGPoint(x: self.frame.midX, y: self.frame.midY - CGFloat(100 * index))
-            button1.name = title
-            button1.label.name = title
-            button1.setScale(0.2)
-            addChild(button1)
+            let button = ButtonNode(titled: title, backgroundName: "buttonBackground")
+            button.position = CGPoint(x: self.frame.midX, y: self.frame.midY - CGFloat(100 * index))
+            button.name = title
+            button.label.name = title
+            button.setScale(0.2)
+            addChild(button)
         }
     }
     
-    var supportedInterfaceOrientations: UIInterfaceOrientationMask {
-           
-                   
-        return .landscape
-           
-   }
+    override func viewWillTransition(to size: CGSize) {
+        
+    }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         let location = touches.first!.location(in: self)
